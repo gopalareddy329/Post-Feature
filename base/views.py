@@ -39,6 +39,6 @@ def addpost(request):
             form1=form.save(commit=False)
             form1.host=request.user
             form1.save()
-            return redirect('home')
+            return redirect('posts')
     context={'form':form}
     return render(request,'add.html',context)
