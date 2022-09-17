@@ -10,14 +10,22 @@
 
 </style>
 <body>
+    <nav>
+        <h1><a href="/" style="color: blue; text-decoration: none;">Posts</a></h1>
+        <button style="left: 90%; bottom: 93%; position: absolute;"><a href="{% url 'add' %}" >Add post</a></button>
+        <hr>
+    </nav>
+    
     <div class="home">
-        <button><a href="{% url 'add' %}">Add post</a></button>
+        
         <div>
+
             {% for post in posts %}
                 @{{post.host}}<br>
-                <img src="{{ post.img.url }}" width="400" height="200" align="left">
+                <img src="{{ post.img.url }}" width="400" height="200">
                 <br>
-                {{post.comment}}<br>
+                <p>{{post.comment}}</p>
+                <hr>
             {% endfor %}
         </div>
 
